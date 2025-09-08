@@ -5,18 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chá de Casa Nova - Carol & Lucas</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h2>CHÁ DE CASA NOVA</h2>
-    <h1>Carol & Lucas</h1>
-    <p>Nosso novo lar está ganhando forma e queremos <span class="highlight">celebrar com você.</span></p>
-    <p><em>Junte-se</em> a nós para um chá de casa cheio de sorrisos e delícias.</p>
+    <header>
+      <h2 class="subtitle">CHÁ DE CASA NOVA</h2>
+      <h1 class="title">Carol & Lucas</h1>
+    </header>
 
-    <div class="date">📅 Sábado, 11 de Outubro - 15h</div>
-    <p>📍 Rua Leandro Barreto, 945 - Jardim São Paulo</p>
+    <p class="intro">
+      Nosso novo lar está ganhando forma e queremos <span class="highlight">celebrar com você.</span>
+    </p>
+    <p class="intro"><em>Junte-se</em> a nós para um chá de casa cheio de sorrisos e delícias.</p>
 
-    <div class="gift-list">
+    <div class="date-card">
+      <span class="day">SÁBADO</span>
+      <span class="number">11</span>
+      <span class="month">Outubro</span>
+      <span class="hour">15h</span>
+    </div>
+
+    <p class="location">📍 Rua Leandro Barreto, 945 - Jardim São Paulo</p>
+
+    <section class="gift-list">
       <h3>Lista de Presentes 🎁</h3>
       <div class="gift-item">
         <input type="checkbox" id="item1" onclick="selectGift(this)">
@@ -35,4 +47,24 @@
         <label for="item4">Aspirador de pó</label>
       </div>
       <div class="gift-item">
-        <input type="checkbox" id="item5" onclick
+        <input type="checkbox" id="item5" onclick="selectGift(this)">
+        <label for="item5">Liquidificador</label>
+      </div>
+    </section>
+
+    <section class="pix">
+      <h3>Ou contribua pelo Pix 💚</h3>
+      <p>Chave Pix:</p>
+      <code id="pixKey">seuemail@pix.com</code>
+      <br>
+      <button onclick="copyPix()">Copiar Chave Pix</button>
+    </section>
+  </div>
+
+  <footer>
+    <p>Com carinho, Carol & Lucas</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

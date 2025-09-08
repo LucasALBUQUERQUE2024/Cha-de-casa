@@ -1,18 +1,18 @@
-// Função para copiar a chave Pix
+// Ação para copiar a chave Pix
 function copyPix() {
   const pixKey = document.getElementById("pixKey").innerText;
   navigator.clipboard.writeText(pixKey);
   alert("Chave Pix copiada!");
 }
 
-// Função para lidar com a seleção dos presentes
+// Ação ao selecionar um item da lista de presentes
 function selectGift(checkbox) {
   if (checkbox.checked) {
     alert("Você escolheu: " + checkbox.nextElementSibling.innerText + "!");
   }
 }
 
-// Função para enviar o formulário RSVP
+// Lógica para enviar o formulário RSVP para a planilha do Google Sheets
 const form = document.getElementById('rsvpForm');
 const formMessage = document.getElementById('formMessage');
 const submitButton = document.getElementById('rsvpSubmitButton');
@@ -25,10 +25,10 @@ form.addEventListener('submit', function(event) {
   formMessage.style.color = '#B8860B';
   formMessage.innerText = 'Por favor, aguarde...';
 
-  // URL do seu Google Apps Script (IMPORTE A URL QUE VOCÊ COPIOU AQUI)
-  const url = 'COLE_AQUI_A_SUA_URL_DO_GOOGLE_APPS_SCRIPT';
+  // URL do seu Google Apps Script (a que você copiou do passo de implantação)
+  const url = 'https://script.google.com/macros/s/AKfycbwpPA-z39Ggi81a0bzh-zYh2elyVt6mra_d9yfR-BH0zbx-TX4km9d29oUYART8DD3C/exec';
   
-  // Cria um objeto FormData para pegar os dados do formulário
+  // Cria um objeto FormData para pegar todos os dados do formulário
   const formData = new FormData(form);
 
   fetch(url, {

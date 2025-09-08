@@ -1,69 +1,264 @@
+/* ===== ESTILO GERAL ===== */
+:root {
+  --primary-color: #5D8A6F; /* Verde esmeralda mais escuro */
+  --secondary-color: #E6DCD2; /* Bege suave */
+  --text-dark: #333;
+  --text-light: #555;
+  --bg-light: #FBF9F6; /* Fundo muito claro */
+  --accent-gold: #B8860B; /* Dourado suave para destaque */
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  background: #fdfbf7;
-  color: #222;
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-light); /* Fundo claro */
+  color: var(--text-dark);
   text-align: center;
+  line-height: 1.6;
+  min-height: 100vh; /* Garante que o body ocupa a altura total */
+  display: flex;
+  flex-direction: column;
 }
+
+/* Container */
 .container {
-  max-width: 600px;
+  max-width: 700px; /* Aumentei um pouco */
   margin: auto;
-  padding: 20px;
+  padding: 40px 25px; /* Mais padding */
+  position: relative;
+  flex-grow: 1; /* Permite que o container ocupe o espaço disponível */
 }
-h1 {
-  font-family: 'Brush Script MT', cursive;
-  font-size: 3em;
-  margin: 0.2em 0;
+
+/* ===== TÍTULOS ===== */
+header {
+  margin-bottom: 30px;
 }
-h2 {
-  font-weight: normal;
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5em; /* Aumentei o tamanho */
+  margin: 0.1em 0 0.2em; /* Ajuste de margem */
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.subtitle {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.3em;
+  letter-spacing: 3px; /* Aumentei o espaçamento */
+  font-weight: 400; /* Mais leve */
+  color: var(--text-light);
+  text-transform: uppercase;
 }
+
+.intro {
+  margin: 15px 0;
+  font-size: 1.15em;
+  color: var(--text-dark);
+}
+
+.intro em {
+  font-style: normal; /* Remove itálico padrão */
+  color: var(--primary-color); /* Destaca "junte-se" */
+  font-weight: 500;
+}
+
 .highlight {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* ===== DATA ===== */
+.date-card {
+  background: white;
+  border: none; /* Remove a borda para um look mais limpo */
+  border-radius: 15px; /* Borda mais suave */
+  padding: 25px; /* Mais padding */
+  margin: 35px auto; /* Mais margem */
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra mais pronunciada e suave */
+  transition: transform 0.3s ease-in-out;
+}
+
+.date-card:hover {
+  transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+}
+
+.date-card .day {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.date-card .number {
+  font-size: 4em; /* Aumentei bastante */
   font-weight: bold;
+  color: var(--text-dark);
+  line-height: 1; /* Ajuste para centralizar */
 }
-.date {
-  font-size: 2em;
-  margin: 20px 0;
+
+.date-card .month {
+  font-size: 1.5em; /* Aumentei */
+  display: block;
+  font-style: normal; /* Remove itálico */
+  color: var(--text-light);
+  margin-top: 5px;
+  font-weight: 500;
 }
-.gift-list {
-  text-align: left;
-  background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+.date-card .hour {
+  font-size: 1.1em;
+  color: var(--text-light);
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
 }
-.gift-list h3 {
+
+.location {
+  margin-bottom: 35px; /* Mais margem */
+  font-size: 1.1em;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.location a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.location a:hover {
+  color: var(--accent-gold);
+}
+
+
+/* ===== LISTA DE PRESENTES & RSVP ===== */
+section {
+  background: white;
+  padding: 30px; /* Mais padding */
+  border-radius: 15px;
+  margin-top: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07); /* Sombra mais leve */
+}
+
+section h3 {
   margin-top: 0;
   text-align: center;
+  color: var(--primary-color);
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  font-family: 'Great Vibes', cursive; /* Títulos de seção com fonte charmosa */
 }
+
 .gift-item {
-  margin: 10px 0;
+  margin: 15px 0;
+  font-size: 1.1em;
+  display: flex; /* Para alinhar checkbox e label */
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
 }
+
+.gift-item label {
+  cursor: pointer;
+  color: var(--text-dark);
+  padding-left: 10px; /* Espaço entre checkbox e label */
+}
+
+input[type="checkbox"] {
+  transform: scale(1.3); /* Aumenta um pouco mais */
+  margin-right: 0px; /* Remove margem padrão, ajustado pelo padding da label */
+  accent-color: var(--primary-color); /* Cor do checkbox quando marcado */
+}
+
+/* ===== PIX ===== */
+.pix {
+  background: var(--secondary-color); /* Fundo mais suave */
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.pix h3 {
+  color: var(--primary-color);
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8em;
+}
+
+.pix p {
+  font-size: 1.1em;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.pix code {
+  font-size: 1.3em; /* Aumentei a chave pix */
+  background: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
 button {
-  background: #2d6a4f;
+  background: var(--primary-color);
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
+  padding: 12px 22px; /* Aumentei o padding */
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 1.05em;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* Sombra no botão */
 }
+
 button:hover {
-  background: #1b4332;
+  background: #4B745A; /* Um pouco mais escuro */
+  transform: translateY(-2px); /* Efeito sutil */
 }
-.pix {
-  margin-top: 25px;
-  padding: 15px;
-  background: #e9f5ee;
-  border-radius: 10px;
+
+/* ===== RODAPÉ ===== */
+footer {
+  margin-top: 50px; /* Mais espaço */
+  padding: 20px;
+  font-size: 0.95em;
+  color: var(--text-light);
+  background: var(--secondary-color); /* Fundo no rodapé */
+  width: 100%;
 }
-.pix code {
-  font-size: 1.1em;
-  background: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: inline-block;
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .title {
+    font-size: 3.5em;
+  }
+  .subtitle {
+    font-size: 1em;
+    letter-spacing: 2px;
+  }
+  .date-card .number {
+    font-size: 3em;
+  }
+  .date-card .month {
+    font-size: 1.2em;
+  }
+  section h3 {
+    font-size: 1.5em;
+  }
+  .pix code {
+    font-size: 1em;
+  }
+  button {
+    padding: 10px 15px;
+    font-size: 0.95em;
+  }
 }

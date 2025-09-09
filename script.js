@@ -1,473 +1,55 @@
-/* ===== PALETA DE CORES E FONTES ===== */
-:root {
-  --font-heading: 'Playfair Display', serif; /* Títulos principais e nomes */
-  --font-subheading: 'Lora', serif; /* Subtítulos e destaques */
-  --font-body: 'Montserrat', sans-serif; /* Corpo do texto e formulários */
-
-  --color-primary-dark: #6D4C41; /* Marrom escuro aconchegante */
-  --color-primary-light: #A1887F; /* Marrom claro/rosado */
-  --color-accent-gold: #D4AF37; /* Dourado suave para detalhes */
-  --color-text-dark: #333333;
-  --color-text-light: #555555;
-  --color-background-light: #FBF9F7; /* Creme muito claro */
-  --color-background-medium: #EDEAE7; /* Bege acinzentado */
-  --color-border: #E0DCD8; /* Borda suave */
+// Ação para copiar a chave Pix
+function copyPix() {
+  const pixKey = document.getElementById("pixKey").innerText;
+  navigator.clipboard.writeText(pixKey);
+  alert("Chave Pix copiada!");
 }
 
-/* ===== ESTILO GERAL E FUNDO ===== */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: var(--font-body);
-  background-color: var(--color-background-light);
-  color: var(--color-text-dark);
-  text-align: center;
-  line-height: 1.8; /* Aumentei o espaçamento da linha para melhor leitura */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden; /* Evita scroll horizontal */
-}
-
-/* Padrão de fundo sutil para o body */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23e8e1d7" fill-opacity="0.2" fill-rule="evenodd"%3E%3Cpath d="M5 0h1L0 6V5zm1 6V5H5z"/%3E%3C/g%3E%3C/svg%3E');
-  z-index: -1;
-  opacity: 0.7; /* Tornar o padrão mais sutil */
-}
-
-/* Container principal */
-.container {
-  max-width: 800px; /* Mais largo para um visual mais grandioso */
-  margin: 0 auto;
-  padding: 60px 30px; /* Mais padding */
-  flex-grow: 1;
-}
-
-/* ===== SEÇÃO HERO (TOPO DA PÁGINA) ===== */
-.hero-section {
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517702157774-c36a83607063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center center / cover no-repeat;
-  color: white;
-  padding: 120px 20px; /* Mais altura */
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  margin-bottom: 60px;
-  position: relative;
-  overflow: hidden; /* Para garantir que o gradiente e a imagem fiquem bem */
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1; /* Garante que o texto fique acima do overlay */
-}
-
-.hero-section .subtitle {
-  font-family: var(--font-body);
-  font-size: 1.2em;
-  letter-spacing: 5px;
-  font-weight: 300;
-  margin-bottom: 15px;
-  color: rgba(255,255,255,0.8);
-}
-
-.hero-section .title {
-  font-family: var(--font-heading);
-  font-size: 6em; /* Título maior */
-  margin: 0;
-  line-height: 1;
-  color: white;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-}
-
-.hero-section .names {
-  font-family: var(--font-subheading);
-  font-size: 2.5em; /* Nomes em destaque */
-  margin-top: 20px;
-  color: var(--color-accent-gold);
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-}
-
-/* ===== SEÇÕES GERAIS DE INFORMAÇÃO ===== */
-.info-section {
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  margin-top: 40px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  border-left: 5px solid var(--color-primary-light); /* Detalhe lateral */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
-
-.info-section h3 {
-  font-family: var(--font-subheading);
-  font-size: 2.2em;
-  color: var(--color-primary-dark);
-  margin-bottom: 25px;
-  position: relative;
-  display: inline-block;
-}
-
-.info-section h3::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 2px;
-  background-color: var(--color-accent-gold);
-}
-
-.info-section p {
-  font-family: var(--font-body);
-  font-size: 1.05em;
-  color: var(--color-text-light);
-  max-width: 600px;
-  margin: 15px auto;
-}
-
-.highlight {
-  color: var(--color-accent-gold);
-  font-weight: 500;
-}
-
-/* ===== DETALHES DE DATA E LOCALIZAÇÃO ===== */
-.details-section {
-  background: var(--color-background-medium);
-}
-
-.date-location-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  margin-top: 30px;
-}
-
-@media (min-width: 768px) {
-  .date-location-grid {
-    grid-template-columns: 1fr 1fr;
+// Ação ao selecionar um item da lista de presentes
+function selectGift(checkbox) {
+  if (checkbox.checked) {
+    alert("Você escolheu: " + checkbox.nextElementSibling.innerText + "!");
   }
 }
 
-.date-card, .location-card {
-  background: white;
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
+// Lógica para enviar o formulário para a planilha do Google Sheets
+document.getElementById('rsvpForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Impede o envio padrão do formulário
 
-.date-card {
-  border: 1px solid var(--color-border);
-}
+  const form = document.getElementById('rsvpForm');
+  const formData = new FormData(form);
+  
+  // URL do seu Google Apps Script
+  const appScriptUrl = 'https://script.google.com/macros/s/AKfycbyAsGCaHgAbQg5ZUqeHVeJ-iO11Ns6kCQZxR6Xq1srILkgWqNnBIGVhpxpECQRlzW0-/exec';
 
-.date-card .day {
-  font-family: var(--font-body);
-  font-size: 1.1em;
-  font-weight: 600;
-  color: var(--color-primary-light);
-  margin-bottom: 5px;
-}
+  const formMessage = document.getElementById('formMessage');
+  const submitButton = document.getElementById('rsvpSubmitButton');
 
-.date-card .number {
-  font-family: var(--font-heading);
-  font-size: 4em;
-  font-weight: 700;
-  color: var(--color-primary-dark);
-  line-height: 1;
-}
+  submitButton.disabled = true;
+  formMessage.innerText = 'Enviando sua confirmação...';
+  formMessage.style.color = '#6D4C41';
 
-.date-card .month {
-  font-family: var(--font-subheading);
-  font-size: 1.5em;
-  color: var(--color-text-light);
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-top: 5px;
-}
-
-.date-card .hour {
-  font-family: var(--font-body);
-  font-size: 1.2em;
-  color: var(--color-text-light);
-  margin-top: 20px;
-  font-weight: 500;
-}
-
-.location-card h4 {
-  font-family: var(--font-subheading);
-  font-size: 1.8em;
-  color: var(--color-primary-dark);
-  margin-bottom: 15px;
-}
-
-.location-card p {
-  font-size: 1.05em;
-  margin-bottom: 20px;
-}
-
-.btn-map {
-  display: inline-block;
-  background-color: var(--color-accent-gold);
-  color: white;
-  padding: 10px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-family: var(--font-body);
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-map:hover {
-  background-color: #c79a2f;
-  transform: translateY(-2px);
-}
-
-/* ===== LISTA DE PRESENTES ===== */
-.gift-list-section {
-  background: linear-gradient(135deg, white 0%, var(--color-background-light) 100%);
-}
-
-.gift-item-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 30px;
-  text-align: left; /* Alinhar texto dos itens à esquerda */
-}
-
-.gift-item {
-  background: var(--color-background-medium);
-  padding: 12px 15px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  transition: background-color 0.2s ease;
-}
-
-.gift-item:hover {
-  background-color: #e4e0dc;
-}
-
-.gift-item input[type="checkbox"] {
-  transform: scale(1.1);
-  margin-right: 10px;
-  accent-color: var(--color-primary-light);
-  cursor: pointer;
-}
-
-.gift-item label {
-  font-family: var(--font-body);
-  font-size: 1em;
-  color: var(--color-text-dark);
-  cursor: pointer;
-  flex-grow: 1; /* Permite que o label ocupe o espaço restante */
-}
-
-/* ===== FORMULÁRIO RSVP ===== */
-.rsvp-section {
-  background: white;
-  border-left-color: var(--color-accent-gold);
-}
-
-.rsvp-section p {
-  margin-bottom: 30px;
-}
-
-.rsvp form {
-  text-align: left;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.form-group {
-  margin-bottom: 25px;
-}
-
-.form-group label {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 1em;
-  color: var(--color-text-dark);
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.form-group input, .form-group select, .form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  font-family: var(--font-body);
-  font-size: 1em;
-  box-sizing: border-box;
-  background-color: var(--color-background-light);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  outline: none;
-  border-color: var(--color-primary-light);
-  box-shadow: 0 0 8px rgba(161, 136, 127, 0.3);
-  background-color: white;
-}
-
-.rsvp-section button {
-  background-color: var(--color-primary-dark);
-  color: white;
-  padding: 14px 30px;
-  border-radius: 8px;
-  font-size: 1.1em;
-  letter-spacing: 1px;
-  margin-top: 20px;
-}
-
-.rsvp-section button:hover {
-  background-color: #5d3f38;
-}
-
-.message-text {
-  font-weight: 500;
-  margin-top: 20px !important;
-  font-size: 1em !important;
-  color: var(--color-primary-dark) !important;
-}
-
-/* ===== SEÇÃO PIX ===== */
-.pix-section {
-  background: linear-gradient(45deg, var(--color-background-medium) 0%, var(--color-background-light) 100%);
-  border-left-color: var(--color-primary-dark);
-}
-
-.pix-info-box {
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  max-width: 400px;
-  margin: 30px auto 0;
-  border: 1px solid var(--color-border);
-}
-
-.pix-info-box p {
-  margin-bottom: 10px;
-  font-size: 1.05em;
-  color: var(--color-text-dark);
-}
-
-.pix-info-box code {
-  font-family: 'Courier New', monospace; /* Fonte monoespaçada para a chave Pix */
-  font-size: 1.3em;
-  background: var(--color-background-medium);
-  padding: 10px 18px;
-  border-radius: 6px;
-  display: inline-block;
-  font-weight: 600;
-  color: var(--color-primary-dark);
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-}
-
-.pix-info-box button {
-  background-color: var(--color-primary-light);
-}
-
-.pix-info-box button:hover {
-  background-color: #907d75;
-}
-
-/* ===== RODAPÉ ===== */
-footer {
-  margin-top: 80px;
-  padding: 30px;
-  font-size: 0.9em;
-  color: white;
-  background-color: var(--color-primary-dark);
-  width: 100%;
-  box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-  font-family: var(--font-body);
-}
-
-footer p {
-  margin: 0;
-  color: rgba(255,255,255,0.9);
-}
-
-.social-links {
-  margin-top: 15px;
-  /* Estilos para links de redes sociais, se adicionados */
-}
-
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 80px 20px;
-  }
-  .hero-section .title {
-    font-size: 4.5em;
-  }
-  .hero-section .names {
-    font-size: 2em;
-  }
-  .info-section {
-    padding: 30px 20px;
-  }
-  .info-section h3 {
-    font-size: 1.8em;
-  }
-  .date-card .number {
-    font-size: 3.5em;
-  }
-  .date-card .month {
-    font-size: 1.3em;
-  }
-  .gift-item-grid {
-    grid-template-columns: 1fr;
-  }
-  .rsvp form {
-    padding: 0;
-  }
-  .pix-info-box {
-    margin: 20px auto 0;
-  }
-  .pix-info-box code {
-    font-size: 1.1em;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section .title {
-    font-size: 3.5em;
-  }
-  .hero-section .names {
-    font-size: 1.6em;
-  }
-  .subtitle {
-    font-size: 1em;
-    letter-spacing: 3px;
-  }
-  .info-section h3 {
-    font-size: 1.6em;
-  }
-  .date-card .number {
-    font-size: 3em;
-  }
-  .date-card .month {
-    font-size: 1.1em;
-  }
-  .btn-map {
-    padding: 8px 18px;
-    font-size: 0.9em;
-  }
-}
+  fetch(appScriptUrl, {
+    method: 'POST',
+    body: formData,
+  })
+  .then(response => {
+    if (response.ok) {
+      formMessage.innerText = 'Confirmação enviada com sucesso! 🎉';
+      formMessage.style.color = '#5a7d75';
+      form.reset();
+    } else {
+      formMessage.innerText = 'Ocorreu um erro. Tente novamente mais tarde.';
+      formMessage.style.color = '#D4AF37';
+      console.error('Erro na resposta do servidor:', response.status);
+    }
+  })
+  .catch(error => {
+    formMessage.innerText = 'Ocorreu um erro. Verifique sua conexão.';
+    formMessage.style.color = '#D4AF37';
+    console.error('Erro de conexão:', error);
+  })
+  .finally(() => {
+    submitButton.disabled = false;
+  });
+});

@@ -1,185 +1,180 @@
-/* ===== ESTILO GERAL ===== */
+/* ===== PALETA DE CORES E FONTES ===== */
 :root {
-  --primary-color: #5D8A6F; /* Verde esmeralda mais escuro */
-  --secondary-color: #E6DCD2; /* Bege suave */
-  --text-dark: #333;
-  --text-light: #555;
-  --bg-light: #FBF9F6; /* Fundo muito claro */
-  --accent-gold: #B8860B; /* Dourado suave para destaque */
+  --font-heading: 'Playfair Display', serif; /* Fonte elegante para títulos */
+  --font-body: 'Poppins', sans-serif; /* Fonte limpa e legível para o corpo do texto */
+  --color-primary: #5a7d75; /* Verde-acinzentado escuro */
+  --color-secondary: #f4e8d9; /* Bege suave */
+  --color-text-dark: #333;
+  --color-text-light: #666;
+  --color-background: #fdfaf5; /* Off-white quase branco */
+  --color-accent: #926f5b; /* Um tom de cobre/terracota */
 }
 
+/* ===== ESTILO GERAL E FUNDO ===== */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: var(--bg-light); /* Fundo claro */
-  color: var(--text-dark);
+  font-family: var(--font-body);
+  background: var(--color-background);
+  color: var(--color-text-dark);
   text-align: center;
-  line-height: 1.6;
-  min-height: 100vh; /* Garante que o body ocupa a altura total */
+  line-height: 1.7;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 /* Container */
 .container {
-  max-width: 700px; /* Aumentei um pouco */
-  margin: auto;
-  padding: 40px 25px; /* Mais padding */
+  max-width: 750px; /* Um pouco mais largo */
+  margin: 0 auto;
+  padding: 50px 25px;
   position: relative;
-  flex-grow: 1; /* Permite que o container ocupe o espaço disponível */
+  flex-grow: 1;
 }
 
-/* ===== TÍTULOS ===== */
+/* Adicionando um padrão de fundo sutil */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23e8e1d7" fill-opacity="0.5" fill-rule="evenodd"%3E%3Cpath d="M5 0h1L0 6V5zm1 6V5H5z"/%3E%3C/g%3E%3C/svg%3E');
+  z-index: -1;
+}
+
+/* ===== TÍTULOS E TEXTOS DE INTRODUÇÃO ===== */
 header {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 4.5em; /* Aumentei o tamanho */
-  margin: 0.1em 0 0.2em; /* Ajuste de margem */
-  color: var(--primary-color);
+  font-family: var(--font-heading);
+  font-size: 5em;
+  margin: 0.1em 0 0.1em;
+  color: var(--color-primary);
   line-height: 1;
 }
 
 .subtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.3em;
-  letter-spacing: 3px; /* Aumentei o espaçamento */
-  font-weight: 400; /* Mais leve */
-  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 1.4em;
+  letter-spacing: 4px;
+  font-weight: 300;
+  color: var(--color-text-light);
   text-transform: uppercase;
 }
 
-.intro {
-  margin: 15px 0;
-  font-size: 1.15em;
-  color: var(--text-dark);
+.intro-box {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
 }
 
-.intro em {
-  font-style: normal; /* Remove itálico padrão */
-  color: var(--primary-color); /* Destaca "junte-se" */
-  font-weight: 500;
+.intro {
+  margin: 10px 0;
+  font-size: 1.15em;
+  color: var(--color-text-dark);
 }
 
 .highlight {
-  font-weight: 600;
-  color: var(--primary-color);
+  font-weight: 500;
+  color: var(--color-primary);
 }
 
-/* ===== DATA ===== */
+/* ===== CARTÃO DA DATA E LOCALIZAÇÃO ===== */
 .date-card {
   background: white;
-  border: none; /* Remove a borda para um look mais limpo */
-  border-radius: 15px; /* Borda mais suave */
-  padding: 25px; /* Mais padding */
-  margin: 35px auto; /* Mais margem */
+  border-radius: 12px;
+  padding: 30px;
+  margin: 40px auto;
   display: inline-block;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra mais pronunciada e suave */
-  transition: transform 0.3s ease-in-out;
-}
-
-.date-card:hover {
-  transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
 .date-card .day {
-  font-size: 1em;
-  font-weight: 600;
-  color: var(--primary-color);
+  font-size: 1.1em;
+  font-weight: 500;
+  color: var(--color-primary);
   display: block;
-  margin-bottom: 5px;
 }
 
 .date-card .number {
-  font-size: 4em; /* Aumentei bastante */
-  font-weight: bold;
-  color: var(--text-dark);
-  line-height: 1; /* Ajuste para centralizar */
+  font-family: var(--font-heading);
+  font-size: 4.5em;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1;
 }
 
 .date-card .month {
-  font-size: 1.5em; /* Aumentei */
+  font-size: 1.6em;
   display: block;
-  font-style: normal; /* Remove itálico */
-  color: var(--text-light);
-  margin-top: 5px;
-  font-weight: 500;
+  color: var(--color-text-light);
+  font-weight: 400;
 }
 
 .date-card .hour {
-  font-size: 1.1em;
-  color: var(--text-light);
-  display: block;
-  margin-top: 10px;
+  font-size: 1.2em;
+  color: var(--color-text-light);
+  margin-top: 15px;
   font-weight: 500;
 }
 
 .location {
-  margin-bottom: 35px; /* Mais margem */
+  margin-bottom: 40px;
   font-size: 1.1em;
-  color: var(--text-light);
-  font-weight: 500;
+  color: var(--color-text-light);
 }
 
 .location a {
-  color: var(--primary-color);
+  color: var(--color-accent);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease;
 }
 
-.location a:hover {
-  color: var(--accent-gold);
-}
-
-
-/* ===== LISTA DE PRESENTES & RSVP ===== */
+/* ===== SEÇÕES DO SITE (LISTA, RSVP, PIX) ===== */
 section {
   background: white;
-  padding: 30px; /* Mais padding */
-  border-radius: 15px;
-  margin-top: 30px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.07); /* Sombra mais leve */
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 35px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
 }
 
 section h3 {
   margin-top: 0;
   text-align: center;
-  color: var(--primary-color);
+  color: var(--color-primary);
   font-size: 1.8em;
   margin-bottom: 25px;
-  font-family: 'Great Vibes', cursive; /* Títulos de seção com fonte charmosa */
+  font-family: var(--font-heading);
 }
 
-.gift-list {
+.gift-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: left;
 }
 
 .gift-item {
-  margin: 15px 0;
-  font-size: 1.1em;
-  display: flex; /* Para alinhar checkbox e label */
-  align-items: center;
-  justify-content: center; /* Centraliza horizontalmente */
+  margin: 10px 0;
+  font-size: 1.05em;
+  color: var(--color-text-dark);
 }
 
-.gift-item label {
-  cursor: pointer;
-  color: var(--text-dark);
-  padding-left: 10px; /* Espaço entre checkbox e label */
+.gift-item input[type="checkbox"] {
+  transform: scale(1.1);
+  margin-right: 8px;
+  accent-color: var(--color-primary);
 }
 
-input[type="checkbox"] {
-  transform: scale(1.3); /* Aumenta um pouco mais */
-  margin-right: 0px; /* Remove margem padrão, ajustado pelo padding da label */
-  accent-color: var(--primary-color); /* Cor do checkbox quando marcado */
-}
-
-/* ===== FORMULÁRIO RSVP ===== */
+/* ===== FORMULÁRIO E BOTÕES ===== */
 .rsvp form {
   text-align: left;
 }
@@ -191,7 +186,7 @@ input[type="checkbox"] {
 .form-group label {
   display: block;
   font-size: 1em;
-  color: var(--text-dark);
+  color: var(--color-text-dark);
   margin-bottom: 8px;
   font-weight: 500;
 }
@@ -201,102 +196,92 @@ input[type="checkbox"] {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   font-size: 1em;
-  box-sizing: border-box; /* Garante que o padding não aumente a largura */
+  box-sizing: border-box;
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 5px rgba(93, 138, 111, 0.5);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px rgba(90, 125, 117, 0.5);
 }
 
 
 /* ===== PIX ===== */
 .pix {
-  background: var(--secondary-color); /* Fundo mais suave */
+  background: var(--color-secondary);
   margin-top: 30px;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.07);
 }
 
 .pix h3 {
-  color: var(--primary-color);
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.8em;
-}
-
-.pix p {
-  font-size: 1.1em;
-  color: var(--text-dark);
-  margin-bottom: 15px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
 }
 
 .pix code {
-  font-size: 1.3em; /* Aumentei a chave pix */
+  font-size: 1.2em;
   background: white;
   padding: 8px 15px;
   border-radius: 8px;
   display: inline-block;
-  font-weight: bold;
-  color: var(--primary-color);
+  font-weight: 500;
+  color: var(--color-primary);
   margin-bottom: 15px;
-  letter-spacing: 0.5px;
 }
 
 button {
-  background: var(--primary-color);
+  background: var(--color-primary);
   color: white;
   border: none;
-  padding: 12px 22px; /* Aumentei o padding */
+  padding: 12px 22px;
   border-radius: 8px;
   cursor: pointer;
   margin-top: 15px;
-  font-size: 1.05em;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* Sombra no botão */
+  font-size: 1em;
+  transition: background 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
 button:hover {
-  background: #4B745A; /* Um pouco mais escuro */
-  transform: translateY(-2px); /* Efeito sutil */
+  background: #4a6660;
 }
 
 /* ===== RODAPÉ ===== */
 footer {
-  margin-top: 50px; /* Mais espaço */
+  margin-top: 50px;
   padding: 20px;
-  font-size: 0.95em;
-  color: var(--text-light);
-  background: var(--secondary-color); /* Fundo no rodapé */
+  font-size: 0.9em;
+  color: var(--color-text-light);
+  background: var(--color-secondary);
   width: 100%;
 }
 
-/* Responsividade */
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 600px) {
+  .container {
+    padding: 30px 20px;
+  }
   .title {
     font-size: 3.5em;
   }
   .subtitle {
-    font-size: 1em;
+    font-size: 1.1em;
     letter-spacing: 2px;
   }
   .date-card .number {
-    font-size: 3em;
+    font-size: 3.5em;
   }
   .date-card .month {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
   section h3 {
-    font-size: 1.5em;
+    font-size: 1.6em;
   }
   .pix code {
     font-size: 1em;
-  }
-  button {
-    padding: 10px 15px;
-    font-size: 0.95em;
   }
 }

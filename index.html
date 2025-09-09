@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chá de Casa Nova - Carol & Lucas</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
@@ -14,41 +14,45 @@
       <h1 class="title">Carol & Lucas</h1>
     </header>
 
-    <p class="intro">
-      Nosso novo lar está ganhando forma e queremos <span class="highlight">celebrar com você.</span>
-    </p>
-    <p class="intro"><em>Junte-se</em> a nós para um chá de casa cheio de sorrisos e delícias.</p>
+    <div class="intro-box">
+      <p class="intro">
+        Nosso novo lar está ganhando forma e queremos <span class="highlight">celebrar com você.</span>
+      </p>
+      <p class="intro">Junte-se a nós para um chá de casa cheio de sorrisos e delícias.</p>
+    </div>
 
     <div class="date-card">
       <span class="day">SÁBADO</span>
       <span class="number">11</span>
-      <span class="month">Outubro</span>
+      <span class="month">OUTUBRO</span>
       <span class="hour">15h</span>
     </div>
 
-    <p class="location">📍 <a href="http://googleusercontent.com/maps.google.com/8" target="_blank" rel="noopener noreferrer">Rua Leandro Barreto, 945 - Jardim São Paulo</a></p>
+    <p class="location">📍 Rua Leandro Barreto, 945 - Jardim São Paulo</p>
 
     <section class="gift-list">
       <h3>Lista de Presentes 🎁</h3>
-      <div class="gift-item">
-        <input type="checkbox" id="item1" name="gift" value="Conjunto de pratos" onclick="selectGift(this)">
-        <label for="item1">Conjunto de pratos</label>
-      </div>
-      <div class="gift-item">
-        <input type="checkbox" id="item2" name="gift" value="Jogo de toalhas" onclick="selectGift(this)">
-        <label for="item2">Jogo de toalhas</label>
-      </div>
-      <div class="gift-item">
-        <input type="checkbox" id="item3" name="gift" value="Panela elétrica" onclick="selectGift(this)">
-        <label for="item3">Panela elétrica</label>
-      </div>
-      <div class="gift-item">
-        <input type="checkbox" id="item4" name="gift" value="Aspirador de pó" onclick="selectGift(this)">
-        <label for="item4">Aspirador de pó</label>
-      </div>
-      <div class="gift-item">
-        <input type="checkbox" id="item5" name="gift" value="Liquidificador" onclick="selectGift(this)">
-        <label for="item5">Liquidificador</label>
+      <div class="gift-item-container">
+        <div class="gift-item">
+          <input type="checkbox" id="item1" name="gift" value="Conjunto de pratos" onclick="selectGift(this)">
+          <label for="item1">Conjunto de pratos</label>
+        </div>
+        <div class="gift-item">
+          <input type="checkbox" id="item2" name="gift" value="Jogo de toalhas" onclick="selectGift(this)">
+          <label for="item2">Jogo de toalhas</label>
+        </div>
+        <div class="gift-item">
+          <input type="checkbox" id="item3" name="gift" value="Panela elétrica" onclick="selectGift(this)">
+          <label for="item3">Panela elétrica</label>
+        </div>
+        <div class="gift-item">
+          <input type="checkbox" id="item4" name="gift" value="Aspirador de pó" onclick="selectGift(this)">
+          <label for="item4">Aspirador de pó</label>
+        </div>
+        <div class="gift-item">
+          <input type="checkbox" id="item5" name="gift" value="Liquidificador" onclick="selectGift(this)">
+          <label for="item5">Liquidificador</label>
+        </div>
       </div>
     </section>
 
@@ -80,7 +84,6 @@
             <textarea id="mensagem" name="mensagem" rows="3"></textarea>
         </div>
         <button type="submit" id="rsvpSubmitButton">Enviar Confirmação</button>
-        <p id="formMessage" style="margin-top: 15px; font-weight: bold;"></p>
       </form>
     </section>
 

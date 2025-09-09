@@ -26,7 +26,7 @@ form.addEventListener('submit', function(event) {
   formMessage.innerText = 'Por favor, aguarde...';
 
   // URL do seu Google Apps Script (a que você copiou do passo de implantação)
-  const url = 'https://script.google.com/macros/s/AKfycbwpPA-z39Ggi81a0bzh-zYh2elyVt6mra_d9yfR-BH0zbx-TX4km9d29oUYART8DD3C/exec';
+  const url = 'https://script.google.com/macros/s/AKfycbyAsGCaHgAbQg5ZUqeHVeJ-iO11Ns6kCQZxR6Xq1srILkgWqNnBIGVhpxpECQRlzW0-/exec';
   
   // Cria um objeto FormData para pegar todos os dados do formulário
   const formData = new FormData(form);

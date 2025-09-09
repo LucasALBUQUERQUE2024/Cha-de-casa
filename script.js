@@ -11,7 +11,3 @@ function selectGift(checkbox) {
     alert("Você escolheu: " + checkbox.nextElementSibling.innerText + "!");
   }
 }
-
-// O Netlify Forms processa o formulário automaticamente com o atributo data-netlify="true" no HTML.
-// Não é necessário um JavaScript adicional para o envio.
-// A mensagem de sucesso padrão do Netlify será exibida após o envio.

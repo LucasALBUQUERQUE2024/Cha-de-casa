@@ -5,34 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chá de Casa Nova - Carol & Lucas</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> 
 </head>
 <body>
+  <audio id="backgroundMusic" loop autoplay>
+    <source src="URL_DA_SUA_MUSICA.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
   <div class="container">
-    <header>
-      <h2 class="subtitle">CHÁ DE CASA NOVA</h2>
-      <h1 class="title">Carol & Lucas</h1>
+    <header class="hero-section">
+      <div class="hero-content">
+        <h2 class="subtitle">VOCÊ É NOSSO CONVIDADO ESPECIAL PARA O</h2>
+        <h1 class="title">Chá de Casa Nova</h1>
+        <p class="names">Carol & Lucas</p>
+      </div>
     </header>
 
-    <div class="intro-box">
-      <p class="intro">
-        Nosso novo lar está ganhando forma e queremos <span class="highlight">celebrar com você.</span>
-      </p>
-      <p class="intro">Junte-se a nós para um chá de casa cheio de sorrisos e delícias.</p>
-    </div>
+    <section class="info-section intro-section">
+      <h3>Um Novo Capítulo Começa</h3>
+      <p>Nosso novo lar está ganhando forma e queremos <span class="highlight">celebrar cada momento com você.</span></p>
+      <p>Sua presença é o nosso maior presente neste dia tão especial. Junte-se a nós para um chá de casa cheio de sorrisos e delícias.</p>
+    </section>
 
-    <div class="date-card">
-      <span class="day">SÁBADO</span>
-      <span class="number">11</span>
-      <span class="month">OUTUBRO</span>
-      <span class="hour">15h</span>
-    </div>
+    <section class="info-section details-section">
+      <h3>Quando e Onde?</h3>
+      <div class="date-location-grid">
+        <div class="date-card">
+          <span class="day">SÁBADO</span>
+          <span class="number">11</span>
+          <span class="month">OUTUBRO</span>
+          <span class="hour">às 15h</span>
+        </div>
+        <div class="location-card">
+          <h4>Nosso Novo Lar</h4>
+          <p>📍 Rua Leandro Barreto, 945 - Jardim São Paulo</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rua+Leandro+Barreto,+945+-+Jardim+São+Paulo" target="_blank" rel="noopener noreferrer" class="btn-map">Ver no Mapa</a>
+        </div>
+      </div>
+    </section>
 
-    <p class="location">📍 Rua Leandro Barreto, 945 - Jardim São Paulo</p>
-
-    <section class="gift-list">
-      <h3>Lista de Presentes 🎁</h3>
-      <div class="gift-item-container">
+    <section class="info-section gift-list-section">
+      <h3>Nossa Lista de Presentes 🎁</h3>
+      <p>Escolha um item para nos ajudar a construir nosso ninho!</p>
+      <div class="gift-item-grid">
         <div class="gift-item">
           <input type="checkbox" id="item1" name="gift" value="Conjunto de pratos" onclick="selectGift(this)">
           <label for="item1">Conjunto de pratos</label>
@@ -53,12 +70,17 @@
           <input type="checkbox" id="item5" name="gift" value="Liquidificador" onclick="selectGift(this)">
           <label for="item5">Liquidificador</label>
         </div>
+        <div class="gift-item">
+          <input type="checkbox" id="item6" name="gift" value="Voucher para loja de decoração" onclick="selectGift(this)">
+          <label for="item6">Voucher para loja de decoração</label>
+        </div>
       </div>
     </section>
 
-    <section class="rsvp">
+    <section class="info-section rsvp-section">
       <h3>Confirme sua Presença ✨</h3>
-      <form id="rsvpForm" name="rsvp" method="POST" data-netlify="true">
+      <p>Por favor, nos informe se você poderá comparecer até [Data Limite do RSVP].</p>
+      <form id="rsvpForm">
         <div class="form-group">
           <label for="nome">Seu Nome Completo:</label>
           <input type="text" id="nome" name="nome" required>
@@ -84,20 +106,26 @@
             <textarea id="mensagem" name="mensagem" rows="3"></textarea>
         </div>
         <button type="submit" id="rsvpSubmitButton">Enviar Confirmação</button>
+        <p id="formMessage" class="message-text"></p>
       </form>
     </section>
 
-    <section class="pix">
+    <section class="info-section pix-section">
       <h3>Ou contribua pelo Pix 💚</h3>
-      <p>Chave Pix:</p>
-      <code id="pixKey">seuemail@pix.com</code>
-      <br>
-      <button onclick="copyPix()">Copiar Chave Pix</button>
+      <p>Sua contribuição é muito bem-vinda e nos ajuda a mobiliar nosso lar.</p>
+      <div class="pix-info-box">
+        <p>Chave Pix:</p>
+        <code id="pixKey">seuemail@pix.com</code>
+        <br>
+        <button onclick="copyPix()">Copiar Chave Pix</button>
+      </div>
     </section>
   </div>
 
   <footer>
     <p>Com carinho, Carol & Lucas</p>
+    <div class="social-links">
+      </div>
   </footer>
 
   <script src="script.js"></script>

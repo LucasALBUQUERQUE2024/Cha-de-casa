@@ -54,7 +54,7 @@ body::before {
 /* ===== SEÇÃO HERO (TOPO DA PÁGINA) ===== */
 .hero-section {
   /* Imagem de fundo ajustada para o tema verde */
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1549414207-6881c964a275?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center center / cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517702157774-c36a83607063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center center / cover no-repeat;
   color: white;
   padding: 120px 20px; /* Mais altura */
   border-radius: 15px;
@@ -378,15 +378,14 @@ body::before {
   font-weight: 600;
   color: var(--color-primary-dark); /* Chave Pix em verde escuro */
   margin-bottom: 20px;
-  letter-spacing: 0.5px;
 }
 
 .pix-info-box button {
-  background-color: var(--color-primary-light); /* Botão em verde sálvia */
+  background-color: var(--color-primary-light);
 }
 
 .pix-info-box button:hover {
-  background-color: #799d82; /* Verde mais escuro no hover */
+  background-color: #799d82;
 }
 
 /* ===== RODAPÉ ===== */
@@ -395,7 +394,7 @@ footer {
   padding: 30px;
   font-size: 0.9em;
   color: white;
-  background-color: var(--color-primary-dark); /* Rodapé em verde escuro */
+  background-color: var(--color-primary-dark);
   width: 100%;
   box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
   font-family: var(--font-body);
@@ -408,7 +407,6 @@ footer p {
 
 .social-links {
   margin-top: 15px;
-  /* Estilos para links de redes sociais, se adicionados */
 }
 
 /* ===== RESPONSIVIDADE ===== */

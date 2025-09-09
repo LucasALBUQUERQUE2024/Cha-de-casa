@@ -36,7 +36,8 @@ body {
 
 /* ===== SEÇÃO HERO (TOPO DA PÁGINA) ===== */
 .hero-section {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1549414207-6881c964a275?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center center / cover no-repeat;
+  /* NOVA IMAGEM DE FUNDO */
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1616047006789-b1d6837e754d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center center / cover no-repeat;
   color: white;
   padding: 150px 20px; /* Aumentar a altura */
   border-radius: 10px;
@@ -57,7 +58,7 @@ body {
   letter-spacing: 3px;
   font-weight: 300;
   margin-bottom: 10px;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.9); /* Cor mais clara para contraste */
   text-transform: uppercase;
 }
 
@@ -74,7 +75,7 @@ body {
   font-family: var(--font-heading);
   font-size: 3em; /* Nomes maiores */
   margin-top: 15px;
-  color: var(--color-primary-light);
+  color: #F0DDAA; /* Um dourado suave para os nomes */
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
@@ -145,224 +146,4 @@ body {
 .date-card .day {
   font-family: var(--font-body);
   font-size: 1em;
-  font-weight: 600;
-  color: var(--color-primary-light);
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
-
-.date-card .number {
-  font-family: var(--font-heading);
-  font-size: 4em;
-  font-weight: 700;
-  color: var(--color-primary-dark);
-  line-height: 1;
-}
-
-.date-card .month {
-  font-family: var(--font-heading);
-  font-size: 1.4em;
-  color: var(--color-text-light);
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-top: 5px;
-}
-
-.date-card .hour {
-  font-family: var(--font-body);
-  font-size: 1.1em;
-  color: var(--color-text-light);
-  margin-top: 15px;
-  font-weight: 500;
-}
-
-.location-card h4 {
-  font-family: var(--font-heading);
-  font-size: 1.8em;
-  color: var(--color-primary-dark);
-  margin-bottom: 10px;
-}
-
-.location-card p {
-  font-size: 1.05em;
-  margin-bottom: 15px;
-}
-
-.btn-map {
-  display: inline-block;
-  background-color: var(--color-accent);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-family: var(--font-body);
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.btn-map:hover {
-  background-color: #6a492f;
-}
-
-/* ===== LISTA DE PRESENTES ===== */
-.gift-item-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  margin-top: 20px;
-  text-align: left;
-}
-
-.gift-item {
-  background: var(--color-background);
-  padding: 10px 15px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-}
-
-.gift-item input[type="checkbox"] {
-  transform: scale(1.1);
-  margin-right: 8px;
-  accent-color: var(--color-primary-light);
-  cursor: pointer;
-}
-
-.gift-item label {
-  font-family: var(--font-body);
-  font-size: 0.95em;
-  color: var(--color-text-dark);
-  cursor: pointer;
-  flex-grow: 1;
-}
-
-/* ===== FORMULÁRIO RSVP ===== */
-.rsvp form {
-  text-align: left;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.95em;
-  color: var(--color-text-dark);
-  margin-bottom: 5px;
-  font-weight: 400;
-}
-
-.form-group input, .form-group select, .form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid var(--color-border);
-  border-radius: 5px;
-  font-family: var(--font-body);
-  font-size: 0.95em;
-  box-sizing: border-box;
-  background-color: white;
-}
-
-.rsvp-section button {
-  background-color: var(--color-primary-dark);
-  color: white;
-  padding: 10px 25px;
-  border-radius: 5px;
-  font-size: 1em;
-  letter-spacing: 1px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.rsvp-section button:hover {
-  background-color: #5d3f38;
-}
-
-/* ===== SEÇÃO PIX ===== */
-.pix-section {
-  background: var(--color-background);
-  margin-top: 30px;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-.pix-info-box {
-  background: var(--color-primary-light);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  max-width: 350px;
-  margin: 20px auto 0;
-}
-
-.pix-info-box p {
-  margin-bottom: 8px;
-  font-size: 1em;
-  color: white;
-}
-
-.pix-info-box code {
-  font-family: monospace;
-  font-size: 1.1em;
-  background: rgba(255,255,255,0.2);
-  padding: 8px 12px;
-  border-radius: 5px;
-  display: inline-block;
-  font-weight: 500;
-  color: white;
-  margin-bottom: 15px;
-}
-
-.pix-info-box button {
-  background-color: var(--color-primary-dark);
-  color: white;
-}
-
-.pix-info-box button:hover {
-  background-color: #5d3f38;
-}
-
-/* ===== RODAPÉ ===== */
-footer {
-  margin-top: 50px;
-  padding: 20px;
-  font-size: 0.85em;
-  color: var(--color-text-light);
-  background-color: var(--color-background);
-  border-top: 1px solid var(--color-border);
-  width: 100%;
-}
-
-@media (max-width: 600px) {
-  .hero-section {
-    padding: 100px 20px;
-  }
-  .hero-section .title {
-    font-size: 3.5em;
-  }
-  .hero-section .names {
-    font-size: 2em;
-  }
-  .info-section {
-    padding: 30px 20px;
-  }
-  .info-section h3 {
-    font-size: 1.8em;
-  }
-  .date-card .number {
-    font-size: 3em;
-  }
-  .date-card .month {
-    font-size: 1.2em;
-  }
-  .pix-info-box {
-    max-width: 100%;
-  }
-}
+  font-

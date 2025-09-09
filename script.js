@@ -19,8 +19,8 @@ document.getElementById('rsvpForm').addEventListener('submit', function(event) {
   const form = document.getElementById('rsvpForm');
   const formData = new FormData(form);
   
-  // URL do seu Google Apps Script
-  const appScriptUrl = 'https://script.google.com/macros/s/AKfycbyjOJ4dSzP9fjD8STEhneqazwFDOtKNYhRCSiXEu30K8BCC6eD2MXNoo0qLz3_BQ7h2/exec';
+  // URL do seu Google Apps Script. VOCÊ PRECISA DESTA URL.
+  const appScriptUrl = 'COLE_A_SUA_URL_DO_APPS_SCRIPT_AQUI'; 
 
   const formMessage = document.getElementById('formMessage');
   const submitButton = document.getElementById('rsvpSubmitButton');
@@ -35,7 +35,7 @@ document.getElementById('rsvpForm').addEventListener('submit', function(event) {
   })
   .then(response => {
     if (response.ok) {
-      formMessage.innerText = 'Confirmação enviada com sucesso! 🎉';
+      formMessage.innerText = 'Confirmação enviada com sucesso! 💚';
       formMessage.style.color = '#5a7d75';
       form.reset();
     } else {

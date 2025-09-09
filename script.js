@@ -20,7 +20,7 @@ document.getElementById('rsvpForm').addEventListener('submit', function(event) {
   const formData = new FormData(form);
   
   // URL do seu Google Apps Script
-  const appScriptUrl = 'https://script.google.com/macros/s/AKfycbyAsGCaHgAbQg5ZUqeHVeJ-iO11Ns6kCQZxR6Xq1srILkgWqNnBIGVhpxpECQRlzW0-/exec';
+  const appScriptUrl = 'https://script.google.com/macros/s/AKfycbyjOJ4dSzP9fjD8STEhneqazwFDOtKNYhRCSiXEu30K8BCC6eD2MXNoo0qLz3_BQ7h2/exec';
 
   const formMessage = document.getElementById('formMessage');
   const submitButton = document.getElementById('rsvpSubmitButton');

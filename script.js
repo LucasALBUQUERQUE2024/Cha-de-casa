@@ -12,44 +12,6 @@ function selectGift(checkbox) {
   }
 }
 
-// Lógica para enviar o formulário para a planilha do Google Sheets
-document.getElementById('rsvpForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Impede o envio padrão do formulário
-
-  const form = document.getElementById('rsvpForm');
-  const formData = new FormData(form);
-  
-  // URL do seu Google Apps Script. VOCÊ PRECISA DESTA URL.
-  const appScriptUrl = 'COLE_A_SUA_URL_DO_APPS_SCRIPT_AQUI'; 
-
-  const formMessage = document.getElementById('formMessage');
-  const submitButton = document.getElementById('rsvpSubmitButton');
-
-  submitButton.disabled = true;
-  formMessage.innerText = 'Enviando sua confirmação...';
-  formMessage.style.color = '#6D4C41';
-
-  fetch(appScriptUrl, {
-    method: 'POST',
-    body: formData,
-  })
-  .then(response => {
-    if (response.ok) {
-      formMessage.innerText = 'Confirmação enviada com sucesso! 💚';
-      formMessage.style.color = '#5a7d75';
-      form.reset();
-    } else {
-      formMessage.innerText = 'Ocorreu um erro. Tente novamente mais tarde.';
-      formMessage.style.color = '#D4AF37';
-      console.error('Erro na resposta do servidor:', response.status);
-    }
-  })
-  .catch(error => {
-    formMessage.innerText = 'Ocorreu um erro. Verifique sua conexão.';
-    formMessage.style.color = '#D4AF37';
-    console.error('Erro de conexão:', error);
-  })
-  .finally(() => {
-    submitButton.disabled = false;
-  });
-});
+// O Netlify Forms processa o formulário automaticamente com o atributo data-netlify="true" no HTML.
+// Não é necessário um JavaScript adicional para o envio.
+// A mensagem de sucesso padrão do Netlify será exibida após o envio.

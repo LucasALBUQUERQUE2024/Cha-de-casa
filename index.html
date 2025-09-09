@@ -1,30 +1,119 @@
-<section class="rsvp">
-  <h3>Confirme sua Presença ✨</h3>
-  <form id="rsvpForm" name="rsvp" method="POST" data-netlify="true">
-    <div class="form-group">
-      <label for="nome">Seu Nome Completo:</label>
-      <input type="text" id="nome" name="nome" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Seu Email:</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="presenca">Você irá ao nosso Chá?</label>
-      <select id="presenca" name="presenca" required>
-        <option value="" disabled selected>Selecione...</option>
-        <option value="Sim">Sim, eu vou!</option>
-        <option value="Nao">Não poderei ir.</option>
-      </select>
-    </div>
-    <div class="form-group">
-        <label for="acompanhantes">Quantos acompanhantes (adultos)?</label>
-        <input type="number" id="acompanhantes" name="acompanhantes" min="0" value="0">
-    </div>
-    <div class="form-group">
-        <label for="mensagem">Uma mensagem para os noivos (opcional):</label>
-        <textarea id="mensagem" name="mensagem" rows="3"></textarea>
-    </div>
-    <button type="submit" id="rsvpSubmitButton">Enviar Confirmação</button>
-  </form>
-</section>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chá de Casa Nova - Carol & Lucas</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="hero-section">
+      <div class="hero-content">
+        <h2 class="subtitle">VOCÊ É NOSSO CONVIDADO PARA O</h2>
+        <h1 class="title">Chá de Casa Nova</h1>
+        <p class="names">Carol & Lucas</p>
+      </div>
+    </header>
+
+    <section class="info-section intro-section">
+      <h3>Um Novo Capítulo</h3>
+      <p>Nosso novo lar está ganhando forma e queremos <span class="highlight">celebrar com você.</span></p>
+      <p>Junte-se a nós para um chá de casa cheio de alegria e delícias.</p>
+    </section>
+
+    <section class="info-section details-section">
+      <h3>Quando e Onde?</h3>
+      <div class="date-location-grid">
+        <div class="date-card">
+          <span class="day">SÁBADO</span>
+          <span class="number">11</span>
+          <span class="month">OUTUBRO</span>
+          <span class="hour">15h</span>
+        </div>
+        <div class="location-card">
+          <h4>Onde a Magia Acontece</h4>
+          <p>📍 Rua Leandro Barreto, 945 - Jardim São Paulo</p>
+          <a href="googleusercontent.com/maps.google.com/0" target="_blank" rel="noopener noreferrer" class="btn-map">Ver no Mapa</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section gift-list-section">
+      <h3>Lista de Presentes 🎁</h3>
+      <p>Escolha um item para nos ajudar a construir nosso ninho!</p>
+      <div class="gift-item-grid">
+        <div class="gift-item">
+          <input type="checkbox" id="item1" name="gift" value="Conjunto de pratos" onclick="selectGift(this)">
+          <label for="item1">Conjunto de pratos</label>
+        </div>
+        <div class="gift-item">
+          <input type="checkbox" id="item2" name="gift" value="Jogo de toalhas" onclick="selectGift(this)">
+          <label for="item2">Jogo de toalhas</label>
+        </div>
+        <div class="gift-item">
+          <input type="checkbox" id="item3" name="gift" value="Panela elétrica" onclick="selectGift(this)">
+          <label for="item3">Panela elétrica</label>
+        </div>
+        <div class="gift-item">
+          <input type="checkbox" id="item4" name="gift" value="Aspirador de pó" onclick="selectGift(this)">
+          <label for="item4">Aspirador de pó</label>
+        </div>
+        <div class="gift-item">
+          <input type="checkbox" id="item5" name="gift" value="Liquidificador" onclick="selectGift(this)">
+          <label for="item5">Liquidificador</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section rsvp-section">
+      <h3>Confirme sua Presença ✨</h3>
+      <form id="rsvpForm" name="rsvp" method="POST" data-netlify="true">
+        <div class="form-group">
+          <label for="nome">Seu Nome Completo:</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Seu Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="presenca">Você irá ao nosso Chá?</label>
+          <select id="presenca" name="presenca" required>
+            <option value="" disabled selected>Selecione...</option>
+            <option value="Sim">Sim, eu vou!</option>
+            <option value="Nao">Não poderei ir.</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="acompanhantes">Quantos acompanhantes (adultos)?</label>
+            <input type="number" id="acompanhantes" name="acompanhantes" min="0" value="0">
+        </div>
+        <div class="form-group">
+            <label for="mensagem">Uma mensagem para os noivos (opcional):</label>
+            <textarea id="mensagem" name="mensagem" rows="3"></textarea>
+        </div>
+        <button type="submit">Enviar Confirmação</button>
+      </form>
+    </section>
+
+    <section class="info-section pix-section">
+      <h3>Ou contribua pelo Pix 💚</h3>
+      <p>Sua contribuição é muito bem-vinda e nos ajuda a construir nosso lar.</p>
+      <div class="pix-info-box">
+        <p>Chave Pix:</p>
+        <code id="pixKey">seuemail@pix.com</code>
+        <br>
+        <button onclick="copyPix()">Copiar Chave Pix</button>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>Com carinho, Carol & Lucas</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
